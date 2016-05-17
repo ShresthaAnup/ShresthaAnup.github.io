@@ -1,84 +1,61 @@
 ---
-title       : Simple Interest Calcuator Project
-subtitle    : Slidify
-author      : Shanti Shakya
-job         : Engineer
+title       : Guess The Number
+subtitle    : A Shiny application to guess the number picked by the Computer
+author      : Anup Shrestha
+job         : 
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
-github:
-  user: shantishakya
-  repo: SimpleInterestShinyApp
 ---
 
-## SLide 1
+## Objective
 
-Introduction
+The objective of this game is to guess an integer between 1 and 100 (inclusive) and try to match it with the computer's selection.
 
-As part of Coursera's Developing Data Products course in the Data Science Specialization I have deleoped a simple interest calculator.
-
-Course project requirements
-
-The application must include the following:
-
-Some form of input (widget: textbox, radio button, checkbox, ...)
-Some operation on the ui input in sever.R
-Some reactive output displayed as a result of server calculations
-You must also include enough documentation so that a novice user could use your application.
-The documentation should be at the Shiny website itself. Do not post to an external link.
-
+It is just a small program as a prototype of Shiny application
 
 --- .class #id 
 
-## Slide 2
+## How to play?
 
-Part of projec:
+Playing the game is simple.
 
-numericInput - A field to get value for the principal amount  
-sliderInput - A slider bar to get value for interest and time periods 
-selectInput - A box with choices to select from, in this case - the type of time period: years, quarters or months
-actionButton - An Button to calculate and display result
+- Computer selects a number when you run the program
 
----  
+- You make a guess
 
-## Slide 3
+- If the guess is right, you get a Correct! notification
 
-Application - 
+- Else you get to know if the guessed number is lower or upper than the computer selected number
 
-We get input for principal amount,interest,time periods
+--- .class #id 
 
-The simple interest calculation equation is:
-A = P + I = P(1 + rt) ; R = r * 100
-where:
-A = Total amount (Principal + Interest), P = Principal amount, I = Interest amount, r = Rate of interest per year, in decimal; r=R/100, t = Time period invested in years/quarters/months
+## The Build
 
-Afther above calculation the result is displayed
+This program is build using the simple prediction approach.
 
 
----  
+```r
+#The computer guesses a random number between 1 and 100
+number <- floor(runif(1,1,101))
 
-## Slide 4
+#Below is displayed the random number guessed by the computer
+print(number)
+```
 
-Code
+```
+## [1] 49
+```
+After the computer completes guess, its the user who should guess
 
-files in repo:
+--- .class #id 
 
-server.R
-ui.R
+## Play yourself
 
-To execute the application and see the code in action, use:
-runApp(displayMode = 'showcase')
+Want to try yourself the game? 
 
----  
-
-## Slide 5
-
-Try out the application on the RStudio shinyapps.io website:
-https://shantishakya.shinyapps.io/SimpleInterestProj/
-
-
-Thank you,
-Shanti Shakya
+Go to - https://adshrestha.shinyapps.io/dataproducts/
+Thank you!
